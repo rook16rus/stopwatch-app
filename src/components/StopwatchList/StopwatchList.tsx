@@ -9,6 +9,16 @@ const StopwatchList = () => {
                 <span>Lap</span>
             </div>
             <ul className={styles.list__laps}>
+                <li className={`${styles.list__item} ${styles.active}`}>
+                    <span>07:17:21</span>
+                    <span>03:11:21</span>
+                    <span>1</span>
+                </li>
+                <li className={styles.list__item}>
+                    <span>07:17:21</span>
+                    <span>03:11:21</span>
+                    <span>1</span>
+                </li>
                 <li className={styles.list__item}>
                     <span>07:17:21</span>
                     <span>03:11:21</span>
