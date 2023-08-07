@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57e15277-666e-4785-9795-457f7f8950c8" name="Changes" comment="Создал разметку приложения">
-      <change afterPath="$PROJECT_DIR$/src/media-mixin.scss" afterDir="false" />
+    <list default="true" id="57e15277-666e-4785-9795-457f7f8950c8" name="Changes" comment="Стилизовал приложение">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <updated>1691383488299</updated>
       <workItem from="1691383489430" duration="2380000" />
       <workItem from="1691386760448" duration="286000" />
-      <workItem from="1691387058629" duration="10558000" />
+      <workItem from="1691387058629" duration="11930000" />
     </task>
     <task id="LOCAL-00001" summary="Настроил сборку, скачал необходимые пакеты, создал файлы компонентов">
       <created>1691387629705</created>
@@ -92,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691393645281</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Стилизовал приложение">
+      <created>1691401802423</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691401802423</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Настроил сборку, скачал необходимые пакеты, создал файлы компонентов" />
     <MESSAGE value="Создал разметку приложения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал разметку приложения" />
+    <MESSAGE value="Стилизовал приложение" />
+    <option name="LAST_COMMIT_MESSAGE" value="Стилизовал приложение" />
   </component>
 </project>

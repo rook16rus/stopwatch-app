@@ -1,3 +1,5 @@
+@import "../../media-mixin";
+
 .display {
   position: relative;
   z-index: 1;
@@ -7,6 +9,7 @@
   align-items: center;
   justify-content: center;
   width: 70%;
+  max-width: 350px;
   aspect-ratio: 1 / 1;
   margin: 50px auto;
 
@@ -23,6 +26,10 @@
     font-weight: 500;
     font-size: 20px;
     text-transform: uppercase;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 24px;
+    }
   }
 
   &__timer {
@@ -30,6 +37,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin: 0 0 20px;
+
+    @include mq('custom', 'min', 550) {
+      gap: 25px;
+    }
   }
 
   &__timer-block {
@@ -49,20 +60,37 @@
       left: calc(100% + 4px);
 
       font-size: 26px;
+
+      @include mq('custom', 'min', 550) {
+        left: calc(100% + 8px);
+        font-size: 30px;
+      }
     }
   }
 
   &__timer-number {
     font-size: 26px;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 30px;
+    }
   }
 
   &__timer-desc {
     font-size: 14px;
     color: #4A4D55;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 18px;
+    }
   }
 
   &__status {
     font-size: 14px;
     color: #5FEAD1;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 18px;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import "../../media-mixin";
+
 .controls {
   position: fixed;
   left: 0;
@@ -20,10 +22,20 @@
 
     border-radius: 50%;
 
+    @include mq('custom', 'min', 550) {
+      width: 65px;
+      height: 65px;
+    }
+
     img {
       width: 16px;
       height: 16px;
       object-fit: contain;
+
+      @include mq('custom', 'min', 550) {
+        width: 20px;
+        height: 20px  ;
+      }
     }
   }
 

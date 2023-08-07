@@ -1,3 +1,5 @@
+@import "../../media-mixin";
+
 .list {
   margin: 0 0 120px;
 
@@ -5,19 +7,30 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5px 0;
-    margin: 0 0 20px;
+    max-width: 1000px;
+    margin: 0 auto 20px;
 
     background-color: #1F2633;
 
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 20px;
+    }
   }
 
   &__laps {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include mq('custom', 'min', 550) {
+      gap: 15px;
+    }
   }
 
   &__item {
@@ -27,6 +40,10 @@
     font-size: 15px;
     text-align: center;
     color: #4A4D55;
+
+    @include mq('custom', 'min', 550) {
+      font-size: 19px;
+    }
 
     &.active {
       color: #FBFBFB;

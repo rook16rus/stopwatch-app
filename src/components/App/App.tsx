@@ -15,3 +15,21 @@ function App() {
 }
 
 export default App;
+
+
+
+/*
+    @include mq('custom', 'min', 1025) {
+
+    }
+
+
+    @include mq('custom', 'min', 769) {
+
+    }
+
+
+    @include mq('custom', 'min', 641) {
+
+    }
+*/
