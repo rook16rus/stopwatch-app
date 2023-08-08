@@ -86,8 +86,14 @@
   }
 
   &__status {
+    opacity: 0;
+
     font-size: 14px;
     color: #5FEAD1;
+
+    &.active {
+      opacity: 1;
+    }
 
     @include mq('custom', 'min', 550) {
       font-size: 18px;

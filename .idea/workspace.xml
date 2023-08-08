@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57e15277-666e-4785-9795-457f7f8950c8" name="Changes" comment="Стилизовал приложение">
+    <list default="true" id="57e15277-666e-4785-9795-457f7f8950c8" name="Changes" comment="Убрал комментарий с медиа-запросами">
+      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchControls/StopwatchControls.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchDisplay/StopwatchDisplay.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StopwatchList/StopwatchList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,21 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "C:/Users/kamal/Desktop/React projects/react-stopwatch/src",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web-ide.project.structure",
-    "ts.external.directory.path": "C:\\Users\\kamal\\Desktop\\React projects\\react-stopwatch\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kamal/Desktop/React projects/react-stopwatch/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kamal\\Desktop\\React projects\\react-stopwatch\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kamal\Desktop\React projects\react-stopwatch\src" />
@@ -72,7 +76,8 @@
       <updated>1691383488299</updated>
       <workItem from="1691383489430" duration="2380000" />
       <workItem from="1691386760448" duration="286000" />
-      <workItem from="1691387058629" duration="11930000" />
+      <workItem from="1691387058629" duration="12156000" />
+      <workItem from="1691467477540" duration="14043000" />
     </task>
     <task id="LOCAL-00001" summary="Настроил сборку, скачал необходимые пакеты, создал файлы компонентов">
       <created>1691387629705</created>
@@ -95,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691401802423</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Адаптировал приложение">
+      <created>1691403351481</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691403351481</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Убрал комментарий с медиа-запросами">
+      <created>1691403379835</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691403379836</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +135,8 @@
     <MESSAGE value="Настроил сборку, скачал необходимые пакеты, создал файлы компонентов" />
     <MESSAGE value="Создал разметку приложения" />
     <MESSAGE value="Стилизовал приложение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Стилизовал приложение" />
+    <MESSAGE value="Адаптировал приложение" />
+    <MESSAGE value="Убрал комментарий с медиа-запросами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал комментарий с медиа-запросами" />
   </component>
 </project>

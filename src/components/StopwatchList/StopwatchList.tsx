@@ -1,6 +1,22 @@
+import { ILap } from "../../types/types";
+
 import styles from './StopwatchList.module.scss'
 
-const StopwatchList = () => {
+type StopWatchListProps = {
+    laps: Array<ILap>
+}
+
+const StopwatchList = ({laps}: StopWatchListProps) => {
+    const lapElements = laps.map(({overall, lapTime, lap}: ILap): React.ReactNode => {
+        return (
+            <li className={`${styles.list__item} ${styles.active}`}>
+                <span>{overall}</span>
+                <span>{lapTime}</span>
+                <span>{lap}</span>
+            </li>
+        )
+    })
+
     return (
         <div className={styles.list}>
             <div className={styles.list__header}>
@@ -9,81 +25,7 @@ const StopwatchList = () => {
                 <span>Lap</span>
             </div>
             <ul className={styles.list__laps}>
-                <li className={`${styles.list__item} ${styles.active}`}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={`${styles.list__item} ${styles.active}`}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={`${styles.list__item} ${styles.active}`}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={`${styles.list__item} ${styles.active}`}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={`${styles.list__item} ${styles.active}`}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
-                <li className={styles.list__item}>
-                    <span>07:17:21</span>
-                    <span>03:11:21</span>
-                    <span>1</span>
-                </li>
+                {lapElements}
             </ul>
         </div>
     )
