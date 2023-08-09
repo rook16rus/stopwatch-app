@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { convertDigit } from "../../functions/functions";
 
 import styles from "./StopwatchDisplay.module.scss"
 
@@ -10,11 +11,7 @@ type StopwatchDisplayProps = {
 }
 
 const StopwatchDisplay = ({milliseconds, seconds, minutes, isActive}: StopwatchDisplayProps) => {
-    const convertDigit = (digit: number): string | number => {
-        return digit > 9 ? digit : '0' + digit
-    }
-
-    return (
+        return (
         <div className="container">
             <div className={styles.display}>
                 <h1 className={styles.display__title}>Stopwatch</h1>

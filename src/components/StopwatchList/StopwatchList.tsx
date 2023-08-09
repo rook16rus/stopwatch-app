@@ -9,7 +9,10 @@ type StopWatchListProps = {
 const StopwatchList = ({laps}: StopWatchListProps) => {
     const lapElements = laps.map(({overall, lapTime, lap}: ILap): React.ReactNode => {
         return (
-            <li className={`${styles.list__item} ${styles.active}`}>
+            <li className={`${styles.list__item} ${styles.active}`}
+                key={lap}
+                style={{order: -lap}}
+            >
                 <span>{overall}</span>
                 <span>{lapTime}</span>
                 <span>{lap}</span>
