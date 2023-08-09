@@ -18,20 +18,31 @@ function App() {
     let intervalRef = useRef<null | NodeJS.Timeout>(null);
     let totalMilliseconds = useRef<number>(0);
 
+    const convertMillisecondsToTimer = (totalMilliseconds: number) => {
+        const milliseconds = Math.floor(totalMilliseconds  % 100);
+        const seconds = Math.floor(totalMilliseconds / 100  % 60);
+        const minutes = Math.floor(totalMilliseconds / 100 / 60);
+
+        return {
+            milliseconds,
+            seconds,
+            minutes
+        }
+    }
+
+    const runTimer = (): void => {
+        totalMilliseconds.current += 1;
+        const { milliseconds, seconds, minutes } = convertMillisecondsToTimer(totalMilliseconds.current);
+
+        setMilliseconds(milliseconds);
+        setSeconds(seconds);
+        setMinutes(minutes);
+    }
+
     const onTogglePlay = (): void => {
         if (!isRunning) {
             setIsRunning(true);
-
-            intervalRef.current = setInterval(() => {
-                totalMilliseconds.current += 1;
-                const milliseconds = Math.floor(totalMilliseconds.current  % 100);
-                const seconds = Math.floor(totalMilliseconds.current / 100  % 60);
-                const minutes = Math.floor(totalMilliseconds.current / 100 / 60);
-
-                setMilliseconds(milliseconds);
-                setSeconds(seconds);
-                setMinutes(minutes);
-            }, 10)
+            intervalRef.current = setInterval(runTimer, 10)
         }
 
         if (isActive) {
@@ -39,18 +50,8 @@ function App() {
             clearInterval(intervalRef.current as NodeJS.Timeout);
         } else {
             setIsActive(true);
-
             if (isRunning) {
-                intervalRef.current = setInterval(() => {
-                    totalMilliseconds.current += 1;
-                    const milliseconds = Math.floor(totalMilliseconds.current  % 100);
-                    const seconds = Math.floor(totalMilliseconds.current / 100  % 60);
-                    const minutes = Math.floor(totalMilliseconds.current / 100 / 60) % 60;
-
-                    setMilliseconds(milliseconds);
-                    setSeconds(seconds);
-                    setMinutes(minutes);
-                }, 10)
+                intervalRef.current = setInterval(runTimer, 10)
             }
         }
     }
@@ -76,14 +77,16 @@ function App() {
             if (laps.length > 0) {
                 const {overall: lastOverall} = laps[laps.length - 1];
                 const [lastOverallMinutes, lastOverallSeconds, lastOverallMilliseconds] = lastOverall.split(':').map(Number);
+
                 const totalLastOverallMilliseconds = (lastOverallMinutes * 60000) + (lastOverallSeconds * 1000) + lastOverallMilliseconds;
                 const totalCurrentOverallMilliseconds = (minutes * 60000) + (seconds * 1000) + milliseconds;
                 const totalDifference = totalCurrentOverallMilliseconds - totalLastOverallMilliseconds;
-                const minutesDifference = convertDigit(Math.floor(totalDifference / 60000));
-                const secondsDifference = convertDigit(Math.floor(totalDifference / 1000) % 60);
-                const millisecondsDifference = convertDigit(totalDifference % 100);
 
-                lapTime = `${minutesDifference}:${secondsDifference}:${millisecondsDifference}`;
+                const minutesDifference = Math.floor(totalDifference / 60000);
+                const secondsDifference = Math.floor(totalDifference / 1000) % 60;
+                const millisecondsDifference = totalDifference % 100;
+
+                lapTime = `${convertDigit(minutesDifference)}:${convertDigit(secondsDifference)}:${convertDigit(millisecondsDifference)}`;
             }
 
             return [
