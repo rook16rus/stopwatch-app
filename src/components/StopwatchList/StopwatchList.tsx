@@ -1,12 +1,12 @@
-import { ILap } from "../../types/types";
+import { useSelector } from "react-redux";
+
+import {ILap, initialStateType} from "../../types/types";
 
 import styles from './StopwatchList.module.scss'
 
-type StopWatchListProps = {
-    laps: Array<ILap>
-}
+const StopwatchList = () => {
+    const laps: Array<ILap> = useSelector((state: initialStateType) => state.laps);
 
-const StopwatchList = ({laps}: StopWatchListProps) => {
     const lapElements = laps.map(({overall, lapTime, lap}: ILap): React.ReactNode => {
         return (
             <li className={`${styles.list__item} ${styles.active}`}

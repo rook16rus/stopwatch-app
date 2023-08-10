@@ -1,17 +1,18 @@
+import { useSelector } from "react-redux";
 import classNames from "classnames";
+
+import { initialStateType } from "../../types/types";
 import { convertDigit } from "../../functions/functions";
 
 import styles from "./StopwatchDisplay.module.scss"
 
-type StopwatchDisplayProps = {
-    milliseconds: number,
-    seconds: number,
-    minutes: number,
-    isActive: boolean
-}
+const StopwatchDisplay = () => {
+    const milliseconds = useSelector((state: initialStateType) => state.milliseconds);
+    const seconds = useSelector((state: initialStateType) => state.seconds);
+    const minutes = useSelector((state: initialStateType) => state.minutes);
+    const isActive = useSelector((state: initialStateType) => state.isActive);
 
-const StopwatchDisplay = ({milliseconds, seconds, minutes, isActive}: StopwatchDisplayProps) => {
-        return (
+    return (
         <div className="container">
             <div className={styles.display}>
                 <h1 className={styles.display__title}>Stopwatch</h1>
