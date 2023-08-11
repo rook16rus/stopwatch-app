@@ -9,7 +9,7 @@ const initialState: initialStateType = {
     isRunning: false
 }
 
-const reducer = (state = initialState, action: actionType) => {
+const reducer = (state = initialState, action: actionType): initialStateType => {
     switch (action.type) {
         case "SET_MILLISECONDS":
             return {

@@ -13,6 +13,12 @@ export type initialStateType = {
     isRunning: boolean
 }
 
+export type convertedMillisecondsType = {
+    milliseconds: number,
+    seconds: number,
+    minutes: number
+}
+
 export type actionType = {
     type: string,
     payload: any

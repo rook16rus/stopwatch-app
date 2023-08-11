@@ -11,7 +11,7 @@ import {
 } from "../../actions/actions";
 
 import { convertDigit } from "../../functions/functions";
-import { ILap, initialStateType } from "../../types/types";
+import { ILap, initialStateType, convertedMillisecondsType } from "../../types/types";
 
 import styles from './StopwatchControls.module.scss'
 
@@ -33,7 +33,7 @@ const StopwatchControls = () => {
     let intervalRef = useRef<null | NodeJS.Timeout>(null);
     let totalMilliseconds = useRef<number>(0);
 
-    const convertMillisecondsToTimer = (totalMilliseconds: number) => {
+    const convertMillisecondsToTimer = (totalMilliseconds: number): convertedMillisecondsType => {
         const milliseconds = Math.floor(totalMilliseconds  % 100);
         const seconds = Math.floor(totalMilliseconds / 100  % 60);
         const minutes = Math.floor(totalMilliseconds / 100 / 60);
@@ -86,25 +86,25 @@ const StopwatchControls = () => {
     const onNext = (): void => {
         if (!isRunning || !isActive) return
 
-        let overall = `${convertDigit(minutes)}:${convertDigit(seconds)}:${convertDigit(milliseconds)}`;
-        let lapTime = overall;
+        let overall: string = `${convertDigit(minutes)}:${convertDigit(seconds)}:${convertDigit(milliseconds)}`;
+        let lapTime: string = overall;
 
         if (laps.length > 0) {
             const {overall: lastOverall} = laps[laps.length - 1];
             const [lastOverallMinutes, lastOverallSeconds, lastOverallMilliseconds] = lastOverall.split(':').map(Number);
 
-            const totalLastOverallMilliseconds = (lastOverallMinutes * 60000) + (lastOverallSeconds * 1000) + lastOverallMilliseconds;
-            const totalCurrentOverallMilliseconds = (minutes * 60000) + (seconds * 1000) + milliseconds;
-            const totalDifference = totalCurrentOverallMilliseconds - totalLastOverallMilliseconds;
+            const totalLastOverallMilliseconds: number = (lastOverallMinutes * 60000) + (lastOverallSeconds * 1000) + lastOverallMilliseconds;
+            const totalCurrentOverallMilliseconds: number = (minutes * 60000) + (seconds * 1000) + milliseconds;
+            const totalDifference: number = totalCurrentOverallMilliseconds - totalLastOverallMilliseconds;
 
-            const minutesDifference = Math.floor(totalDifference / 60000);
-            const secondsDifference = Math.floor(totalDifference / 1000) % 60;
-            const millisecondsDifference = totalDifference % 100;
+            const minutesDifference: number = Math.floor(totalDifference / 60000);
+            const secondsDifference: number = Math.floor(totalDifference / 1000) % 60;
+            const millisecondsDifference: number = totalDifference % 100;
 
             lapTime = `${convertDigit(minutesDifference)}:${convertDigit(secondsDifference)}:${convertDigit(millisecondsDifference)}`;
         }
 
-        const newArray = [
+        const newArray: Array<ILap> = [
             ...laps,
             {
                 overall,
